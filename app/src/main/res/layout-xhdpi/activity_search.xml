@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.e_tecklaptop.testproject.SearchActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainPanel"
+    >
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/customMenu">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/location"
+                android:layout_margin="8dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/location_button"/>
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:text="Search here..."
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/actionInput"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="@android:color/darker_gray"
+                android:onClick="searchInputClicked"
+                android:cursorVisible="false"
+                android:paddingRight="10dp"
+                android:maxLines="1"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:layout_toRightOf="@id/location_button"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:padding="2dp"
+                />
+            <!--  <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/menu_drawer"
+                            android:layout_margin="8dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/menuButton"
+                            />
+            -->
+
+
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout"
+        android:layout_below="@+id/toolbar">
+
+        <include layout="@layout/my_menubar" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/customMenu"
+        android:visibility="gone">
+
+        <include layout="@layout/custom_menu"
+            />
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/addlist"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
